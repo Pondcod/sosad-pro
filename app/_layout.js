@@ -17,6 +17,7 @@ export default function _layout() {
         <Stack.Screen name='Calendar' options={{headerShown:false}}/>
         <Stack.Screen name='Catdata' options={{headerShown:false}}/>
         <Stack.Screen name='Dogdata' options={{headerShown:false}}/>
+        <Stack.Screen name='Booking' options={{headerShown:false}}/>
         
     </Stack>
   )
