@@ -24,6 +24,7 @@ export default function LoginPage() {
          source={require('../assets/cat.png')}
          style={styles.dog}
         />
+    
     <View style={styles.roundedBoxDog}>
         <Text style={styles.Sleeptext}>Babe</Text>
         <Text style={styles.detailtext}>Detail</Text> 
@@ -59,6 +60,7 @@ export default function LoginPage() {
         </View>
         
     </View>
+    
       </SafeAreaView>
     </LinearGradient>
   );
