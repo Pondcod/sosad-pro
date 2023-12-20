@@ -8,7 +8,7 @@ export default function LoginPage() {
 
   return (
     <LinearGradient
-      colors={['#FAE0E1', '#FAE0E1', 'white', 'white', 'white']}
+      colors={['#FAE0E1', '#FAE0E1', 'black', 'black', 'black']}
       style={styles.gradientContainer}
     >
     </LinearGradient>
