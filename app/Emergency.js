@@ -10,43 +10,36 @@ export default function LoginPage() {
 
   return (
     <LinearGradient
-      colors={['#FAE0E1', '#FAE0E1', 'white', 'white', 'white']}
+      colors={['#fff', '#fff', 'white', 'white', 'white']}
       style={styles.gradientContainer}
     >
-      <SafeAreaView style={styles.container}>
-        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.back('Cover')}>
-        <Image
-          source={require('../assets/arrow.png')}
-          style={styles.arrow}
-        />
-        </TouchableOpacity>
-        <Text style={styles.logintext}>LOG IN</Text>
-        <Text style={styles.email}>Email</Text>
-        <Text style={styles.password}>Password</Text>
-        <View style={styles.emailContainer}>
-          <TextInput
-            style={styles.emailInput}
-            placeholder=""
-            value={email}
-            onChangeText={(text) => setEmail(text)}
+    <SafeAreaView>
+      <TouchableOpacity style={{ backgroundColor: '', width: 42, height: 42, marginLeft: 40, marginTop: 40, marginBottom: -60 }} onPress={() => router.back('Home')}>
+          <Image
+            source={require('../assets/arrow.png')}
+            style={styles.arrow}
           />
-        </View>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.passwordInput}
-            placeholder=""
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-          />
-          <TouchableOpacity style={styles.Click} onPress={() => router.push('Signup')}>
-          <Text style={styles.ClickText}>New User. Click Here</Text>
         </TouchableOpacity>
-        <Text style={styles.title}></Text>
-        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
-          <Text style={styles.LoginText}>LOG IN</Text>
-        </TouchableOpacity>
-        </View>
-      </SafeAreaView>
+      <View style={styles.questionContainer}>
+        <Text style={styles.Question}>Are you in</Text>
+        <Text style={styles.Question}>Emergency?</Text>
+        <Text style={styles.Explanation}>Press the button below help will reach you soon.</Text>
+      </View>
+      <View style={styles.button}>
+        <View style={styles.red3}></View>
+        <View style={styles.red2}></View>
+        <LinearGradient
+          colors={['#DC4E4A', '#DC4E4A']}
+          style={styles.circularGradient}
+          >
+        </LinearGradient>
+        <Text style={styles.sos}>SOS</Text>
+      </View>
+      <View style={styles.roundedBox}>
+        <Text style={styles.topic}>Your current address</Text>
+        <Text style={styles.details}>17/4 Village No.5 Bamroongrat Road, Pibulsongkram Sub-district, Muang District, Bangkok, 10400</Text>
+      </View>
+    </SafeAreaView>
     </LinearGradient>
   );
 }
@@ -55,104 +48,86 @@ const styles = StyleSheet.create({
   gradientContainer: {
     flex: 1,
   },
-  container: {
-    flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    position: 'relative',
+  questionContainer:{
+    marginTop: 90,
   },
-  logintext: {
-    width: 262,
-    height: 80,
-    fontSize: 48,
-    color: '#61485E',
+  Question:{
+    fontSize:35,
+    color: "rgba(102, 77, 98, 1)",
     fontWeight: 'bold',
-    position: 'absolute',
-    top: 250,
-    left: 60,
+    textAlign: 'center',
+    marginBottom: 10,
   },
-  arrow: {
-    width: 42,
-    height: 42,
-    position: 'absolute',
-  },
-  email: {
-    width: 231,
-    height: 53,
-    color: '#A6A6A6',
-    fontSize: 24,
-    position: 'absolute',
-    left: 64,
-    top: 360,
-  },
-  password: {
-    width: 261,
-    height: 60,
-    color: '#A6A6A6',
-    fontSize: 24,
-    position: 'absolute',
-    left: 64,
-    top: 510,
-  },
-  emailContainer: {
-    alignItems: 'center',
-    position: 'absolute',
-    top: 410,
-    left: 57,
-    shadowColor: 'grey',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 5,
-  },
-  emailInput: {
-    width: 322,
-    height: 66,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    paddingHorizontal: 20,
-  },
-  passwordContainer: {
-    alignItems: 'center',
-    position: 'absolute',
-    top:560,
-    left: 57,
-    shadowColor: 'grey',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 5,
-  },
-  passwordInput: {
-    width: 322,
-    height: 66,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    paddingHorizontal: 20,
-  },
-  Click: {
+  Explanation:{
+    fontSize: 20,
+    color: "rgba(102, 77, 98, 1)",
+    fontWeight: '600',
+    textAlign: 'center',
     marginTop: 10,
-    paddingVertical: 9,
-    paddingHorizontal: 59,
+    marginLeft: 42,
+    marginRight: 42,
+  },
+  button:{
+    alignItems:'center',
+    marginTop:20,
+  },
+  sos:{
+    fontWeight:'800',
+    color:'#fff',
+    fontSize:48,
     position:'absolute',
-    top:68,
+    marginTop:150,
   },
-  ClickText:{
-    fontSize:20,
-    color:'#A6A6A6',
-  },
-  buttonLogin: {
-    marginTop: 10,
-    backgroundColor: '#61485E',
-    paddingVertical: 9,
-    paddingHorizontal: 59,
-    borderRadius: 30,
+  circularGradient: {
+    width: 222,
+    height: 222,
+    borderRadius: 111,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
     position:'absolute',
-    top:150,
-
+    marginTop:70,
   },
-  LoginText: {
-    fontSize: 35,
-    color: 'white',
+  red2:{
+    width: 291,
+    height:291,
+    backgroundColor:'rgba(246, 195, 196, 1)',
+    borderRadius:145.5,
+    position:'absolute',
+    marginTop:35,
   },
+  red3:{
+    width:362,
+    height:362,
+    backgroundColor:'rgba(249, 232, 238, 1)',
+    borderRadius:181,
+    position:'absolute',
+    justifyContent:'center',
+  },
+  roundedBox:{
+    width: 339,
+    height: 134,
+    borderRadius: 28,
+    backgroundColor: 'rgba(97, 72, 94, 0.11)',
+    marginTop: 400, 
+    marginLeft:50,
+    padding:10,
+  },
+  topic:{
+    width:200,
+    height:20,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: "rgba(102, 77, 98, 1)",
+    marginTop:10,
+    marginBottom:10,
+    marginLeft:15,
+  },
+  details:{
+    width:300,
+    height:85,
+    fontSize: 17,
+    color: "rgba(102, 77, 98, 1)",
+    marginLeft:15,
+  }
 });
