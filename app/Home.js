@@ -50,9 +50,9 @@ export default function CoverPage() {
             />
             </View>
         </TouchableOpacity >
-        <TouchableOpacity onPress={() => router.push('Booking')}>
 
         <Text style={styles.Healthtext}>Health Care</Text>
+        <TouchableOpacity onPress={() => router.push('Calendar')}>
         <View style={{width:160, height:160, marginLeft:30, marginBottom:160,}} >
         <View style={styles.roundedBox3}></View>
         <Image  source={require('../assets/calendar.png')}

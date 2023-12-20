@@ -5,48 +5,12 @@ import { Image } from 'react-native';
 import { Link, router } from 'expo-router';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   return (
     <LinearGradient
       colors={['#FAE0E1', '#FAE0E1', 'white', 'white', 'white']}
       style={styles.gradientContainer}
     >
-      <SafeAreaView style={styles.container}>
-        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.back('Cover')}>
-        <Image
-          source={require('../assets/arrow.png')}
-          style={styles.arrow}
-        />
-        </TouchableOpacity>
-        <Text style={styles.logintext}>LOG IN</Text>
-        <Text style={styles.email}>Email</Text>
-        <Text style={styles.password}>Password</Text>
-        <View style={styles.emailContainer}>
-          <TextInput
-            style={styles.emailInput}
-            placeholder=""
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-          />
-        </View>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.passwordInput}
-            placeholder=""
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-          />
-          <TouchableOpacity style={styles.Click} onPress={() => router.push('Signup')}>
-          <Text style={styles.ClickText}>New User. Click Here</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}></Text>
-        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
-          <Text style={styles.LoginText}>LOG IN</Text>
-        </TouchableOpacity>
-        </View>
-      </SafeAreaView>
     </LinearGradient>
   );
 }
