@@ -14,6 +14,7 @@ export default function _layout() {
         <Stack.Screen name='Login' options={{headerShown:false}}/>
         <Stack.Screen name='Signup' options={{headerShown:false}}/>
         <Stack.Screen name='Home' options={{headerShown:false}}/>
+        
     </Stack>
   )
 }
