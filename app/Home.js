@@ -13,14 +13,16 @@ export default function CoverPage() {
 
         <View style={{flex:1, padding:20,}}>
         <ScrollView>
-        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.back('Cover')}>
+        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.push('Menu')}>
         <Image
           source={require('../assets/menu.png')}
           style={styles.menu}
         />
         </TouchableOpacity>
         <Text style={styles.YourPettext}>Your Pet</Text>
-        <View style={styles.roundedBox}>
+        <TouchableOpacity onPress={() => router.push('Dogdata')}>
+        <View style={styles.roundedBoxDog}>
+        
             <Image
                 source={require('../assets/whitedog.png')}
                 style={styles.whitedog}
@@ -32,8 +34,31 @@ export default function CoverPage() {
                 <Text style={styles.Breedtext}>Breed : Maltese</Text>
                 <Text style={styles.Ownertext}>Owner : Prim</Text>
             </View>
-
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('Catdata')}>
+        <View style={styles.roundedBox2}></View>
+            <View style={{width:160, height:160, marginLeft:40, marginTop:-160,}}>
+
+                <Text style={styles.Babetext}>Babe</Text>
+                <Text style={styles.Agetex2}>Age : 6 month</Text>
+                <Text style={styles.Breedtext2}>Breed : Tabby Cat</Text>
+                <Text style={styles.Ownertext2}>Owner : Prim</Text>
+            <Image
+                source={require('../assets/cat.png')}
+                style={styles.cat}
+            />
+            </View>
+        </TouchableOpacity>
+
+        <Text style={styles.Healthtext}>Health Care</Text>
+        <View style={{width:160, height:160, marginLeft:30, marginBottom:160,}} >
+        <View style={styles.roundedBox3}></View>
+        <Image  source={require('../assets/calendar.png')}
+                style={styles.calendar}
+            />
+        </View>
+
         </ScrollView>
 
         </View>
@@ -62,19 +87,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right:30,
   },
-  Sleeptext:{
-    
-    fontSize:1,
-    color:'#61485E',
-    fontWeight: 'bold',
-    // position: 'absolute',
-    
-    
-  },
-  roundedBox: {
+  roundedBoxDog: {
     width: 390,
     height: 162,
-    borderRadius: 40,
+    borderRadius: 42,
     // justifyContent:"flex-endzz",/
     flexDirection:"row",
     backgroundColor: 'rgba(250, 224, 225, 0.60)',
@@ -133,5 +149,84 @@ const styles = StyleSheet.create({
     marginTop:125,
     position:'absolute'
   },
-
+  roundedBox2: {
+    width: 390,
+    height: 162,
+    borderRadius: 42,
+    backgroundColor: 'rgba(235, 222, 164, 0.50)',
+    marginTop: 30, 
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  Babetext:{
+    width:111,
+    height:53,
+    fontSize:36,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginTop:5,
+  },
+  Agetex2:{
+    width:111,
+    height:53,
+    fontSize:15,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginTop:55,
+    position:'absolute'
+  },
+  Breedtext2:{
+    width:250,
+    height:53,
+    fontSize:15,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginTop:90,
+    position:'absolute'
+  },
+  Ownertext2:{
+    width:111,
+    height:53,
+    fontSize:15,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginTop:125,
+    position:'absolute'
+  },
+  cat:{
+    width:211,
+    height:212,
+    marginTop:-110,
+    marginLeft:160,
+    // position:'absolute',
+    // backgroundColor:"blue"
+  },
+  Healthtext:{
+    width:231,
+    height:53,
+    fontSize:40,
+    color:'#61485E',
+    fontWeight: 'bold',
+    // position: 'absolute',
+    top:30,
+    left:0,
+  },
+  roundedBox3:{
+    width: 339,
+    height: 134,
+    borderRadius: 28,
+    backgroundColor: 'rgba(97, 72, 94, 0.11)',
+    marginTop: 40, 
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  calendar:{
+    
+  },
 });
