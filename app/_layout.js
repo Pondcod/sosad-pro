@@ -15,8 +15,6 @@ export default function _layout() {
         <Stack.Screen name='Signup' options={{headerShown:false}}/>
         <Stack.Screen name='Home' options={{headerShown:false}}/>
         <Stack.Screen name='Calendar' options={{headerShown:false}}/>
-        <Stack.Screen name='Catdata' options={{headerShown:false}}/>
-        <Stack.Screen name='Dogdata' options={{headerShown:false}}/>
     </Stack>
   )
 }
