@@ -63,17 +63,22 @@ export default function LoginPage() {
 }
 
 const styles = StyleSheet.create({
+  arrow: {
+    marginLeft:-20,
+    marginTop:-60,
+  },
   LoginText: {
     width: 262,
     height: 80,
     fontSize: 48,
     color: '#61485E',
     fontWeight: 'bold',
-    marginTop:20,
+    marginTop:-50,
     marginLeft:70,
     
   },
   passwordContainer: {
+
     alignItems: 'center',
     shadowColor: 'grey',
     shadowOffset: { width: 0, height: 2 },
@@ -81,23 +86,26 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
     marginBottom:80,
-    marginLeft:50,
-    marginTop:20,
+    marginLeft:20,
+    marginTop:0,
   },
   passwordInput: {
-    width: 300,
+    width: 250,
     height: 50,
     backgroundColor: 'white',
     borderRadius: 50,
     paddingHorizontal: 20,
     marginTop:-25,
+    marginLeft:-40,
   },
   password: {
     width: 261,
     height: 60,
     color: '#A6A6A6',
     fontSize: 24,
-    marginLeft:10,
+    marginLeft:20,
+    fontWeight: 'bold',
+    marginBottom:-5,
   }
   
 

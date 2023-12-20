@@ -24,15 +24,40 @@ export default function LoginPage() {
          source={require('../assets/whitedog.png')}
          style={styles.dog}
         />
-        <View style={styles.roundedBoxDog}>
-        
-        <View style={{}}>
-
-            <Text style={styles.Sleeptext}>Sleep</Text>
-            <Text style={styles.Agetext}>Age : 1 year old</Text>
-            <Text style={styles.Breedtext}>Breed : Maltese</Text>
-            <Text style={styles.Ownertext}>Owner : Prim</Text>
+    <View style={styles.roundedBoxDog}>
+        <Text style={styles.Sleeptext}>Sleep</Text>
+        <Text style={styles.detailtext}>Detail</Text> 
+        <View style={styles.detailbox}>
+            <View style={styles.detail}>     
+                <Text style={styles.Agetext}>Age : 1 year old</Text>
+                <Text style={styles.Breedtext}>Breed : Maltese</Text>
+                <Text style={styles.Ownertext}>Owner : Prim</Text>
+            </View>
         </View>
+        <Text style={styles.detailtext}>Doctor diagnoses</Text>
+        <View style={styles.doctorbox}>
+            <View style={styles.doctor}>     
+                <Text style={styles.doctortext}>Deiarrhea and vomit</Text>
+                
+            </View>
+        </View>
+        <Text style={styles.detailtext}>On Date</Text>
+        <View style={styles.datebox}>
+            <View style={styles.date}>     
+                <Text style={styles.datetext}>18 November 2023 </Text>
+                <Text style={styles.datetext}>Time : 18:00 pm</Text>
+                
+            </View>
+        </View>
+        <View style={styles.botton}>
+            <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
+                <Text style={styles.LoginText}>DENY</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonCONFIRM} onPress={() => router.push('Home')}>
+                <Text style={styles.CONFIRMText}>CONFIRM</Text>
+            </TouchableOpacity>
+        </View>
+        
     </View>
       </SafeAreaView>
     </LinearGradient>
@@ -51,23 +76,21 @@ const styles = StyleSheet.create({
   },
   
   arrow: {
-    width: 42,
-    height: 42,
-    position: 'absolute',
+    marginLeft:-20,
+    marginTop:-60,
   },
   dog:{
-    width: 400,
-    height: 300,
-    marginTop:0,
-    marginLeft:15,
+    width: 410,
+    height: 250,
+    marginTop:-100,
+    marginLeft:20,
   },
   roundedBoxDog: {
     width: 420,
-    height: 400,
-    borderRadius: 42,
-    flexDirection:"row",
+    height: 700,
+    borderRadius: 60,
     backgroundColor: 'white',
-    marginTop: 0,
+    marginTop: -10,
     shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.4,
@@ -75,32 +98,165 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   Sleeptext:{
-    fontSize:64,
+    fontSize:55,
     color:'#61485E',
     fontWeight: 'bold',
-    marginTop:0,
-    marginLeft:35,
+    marginTop:20,
+    marginLeft:40,
+    marginBottom:5,
     
   },
+
   Agetext:{
-    fontSize:15,
+    fontSize :19,
     color:'#61485E',
     fontWeight: 'bold',
-    marginTop:0,
-    marginLeft:0,
+    marginBottom:7,
   },
   Breedtext:{
-    fontSize:15,
+    fontSize :19,
     color:'#61485E',
     fontWeight: 'bold',
-    marginTop:90,
-    position:'absolute'
+    marginBottom:7,
+    
   },
   Ownertext:{
-    fontSize:15,
+    fontSize :19,
     color:'#61485E',
     fontWeight: 'bold',
-    marginTop:125,
-    position:'absolute'
+    marginBottom:7,
+
   },
+  detail:{
+    
+    marginLeft:32,
+    marginTop:19,
+
+  },
+
+  detailtext:{
+    fontSize:20,
+    color:'#A6A6A6',
+    fontWeight: 'bold',
+    marginTop:11,
+    marginLeft:51,
+  },
+  
+  detailbox:{
+    width: 322,
+    height: 121,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  doctorbox:{
+    width: 322,
+    height: 68,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  doctortext:{
+    fontSize :19,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginBottom:7,
+
+  },
+  doctor:{
+    marginLeft:32,
+    marginTop:20,
+
+  },
+  date:{
+
+    marginLeft:32,
+    marginTop:15,
+
+  },
+  datetext:{
+    fontSize :19,
+    color:'#61485E',
+    fontWeight: 'bold',
+    
+
+  },
+
+  datebox:{
+    width: 322,
+    height: 80,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  buttonLogin: {
+    width: 150,
+    height: 40,
+    marginTop: 30,
+    backgroundColor: '#E06047',
+    borderRadius: 30,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    marginLeft:53,
+    marginRight:12,
+
+  },
+  buttonCONFIRM: {
+    width: 150,
+    height: 40,
+    marginTop: 30,
+    backgroundColor: '#61485E',
+    borderRadius: 30,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    marginLeft:5,
+    marginRight:8,
+
+  },
+
+  LoginText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    marginLeft:48,
+    marginTop:8,
+  },
+  CONFIRMText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    marginLeft:28,
+    marginTop:8,
+  },
+  botton:{
+    marginTop:0,
+    flexDirection: 'row'
+  },
+
 });
