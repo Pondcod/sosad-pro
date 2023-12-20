@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
+import { Link, router } from 'expo-router';
 import { Calendar, LocaleConfig } from 'react-native-calendars'; // Import the Calendar component
 
 LocaleConfig.locales['en'] = {
@@ -30,7 +31,7 @@ export default function LoginPage() {
     >
       
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={{ backgroundColor: '', width: 42, height: 42, marginLeft: 40, marginTop: 73 }} onPress={() => router.back('Cover')}>
+        <TouchableOpacity style={{ backgroundColor: '', width: 42, height: 42, marginLeft: 40, marginTop: 73 }} onPress={() => router.back('Home')}>
           <Image
             source={require('../assets/arrow.png')}
             style={styles.arrow}
