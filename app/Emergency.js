@@ -28,12 +28,16 @@ export default function LoginPage() {
       <View style={styles.button}>
         <View style={styles.red3}></View>
         <View style={styles.red2}></View>
+
         <LinearGradient
           colors={['#DC4E4A', '#DC4E4A']}
           style={styles.circularGradient}
           >
         </LinearGradient>
+        <TouchableOpacity onPress={() => router.push('Emergency2')}>
+
         <Text style={styles.sos}>SOS</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.roundedBox}>
         <Text style={styles.topic}>Your current address</Text>
@@ -77,16 +81,16 @@ const styles = StyleSheet.create({
     fontSize:48,
     position:'absolute',
     marginTop:150,
+    marginLeft:-50,
   },
   circularGradient: {
     width: 222,
     height: 222,
     borderRadius: 111,
     overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
     position:'absolute',
     marginTop:70,
+    marginLeft:-110,
   },
   red2:{
     width: 291,
