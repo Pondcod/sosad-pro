@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Link, router } from 'expo-router';
+import Feather from 'react-native-vector-icons/Feather'
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -21,7 +24,8 @@ export default function LoginPage() {
         <Text style={styles.header}>Create Your</Text>
         <Text style={styles.header}>Profile</Text>
         <View style={styles.box}>
-                <Text style={styles.datetext}></Text>
+                <Text style={styles.datetext}>Add your Profile</Text>
+                <Feather name="camera" size={20} color={Colors.textGray} style={styles.searchIcon} />
         </View>
         <View style={styles.box}>
                 <Text style={styles.datetext}></Text>

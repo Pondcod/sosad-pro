@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+<<<<<<< HEAD
 import Feather from 'react-native-vector-icons/Feather'
 import { Link, router } from 'expo-router';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+=======
+import { Link, router } from 'expo-router';
+>>>>>>> 3ccb1d3717d98a087d4c79abaa5e383072c0e554
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
