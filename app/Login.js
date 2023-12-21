@@ -42,7 +42,8 @@ export default function LoginPage() {
           <Text style={styles.ClickText}>New User. Click Here</Text>
         </TouchableOpacity>
         <Text style={styles.title}></Text>
-        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
+        <TouchableOpacity style={styles.buttonLogin} onPress={()=> router.push('Home')}>
+          
           <Text style={styles.LoginText}>LOG IN</Text>
         </TouchableOpacity>
         </View>
