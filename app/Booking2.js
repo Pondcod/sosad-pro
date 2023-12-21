@@ -1,98 +1,31 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather'
 import { Link, router } from 'expo-router';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import categoriesData from './categoriesData';
-import { FlatList } from 'react-native';
 
-
-    
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-    const renderCategoryItem = ({ item }) => {
-        return (
-          <View style={styles.roundedBoxDog}>
-            <View style={styles.categoryItemWrapper}>
-                <Image source={item.image} style={styles.categoryItemImage}/>
-                <View style={styles.text}>
-                    <View style={styles.searchIcon}>
-                        <Image
-                            source={require('../assets/star.png')}
-                            style={styles.star}
-                        />
-                        <Image
-                            source={require('../assets/star.png')}
-                            style={styles.star}
-                        />
-                        <Image
-                            source={require('../assets/star.png')}
-                            style={styles.star}
-                        />
-                        <Image
-                            source={require('../assets/star.png')}
-                            style={styles.star}
-                        />
-                        <Image
-                            source={require('../assets/star.png')}
-                            style={styles.star}
-                        />
-                    </View>
-                    <Text style={styles.categoryItemTitle}>{item.title}</Text>
-                    <Text  style={styles.location}>{item.location}</Text>
-                    <Text  style={styles.location}>{item.location2}</Text>
-                    <View style={styles.timewrapper}>
-                        <Feather name="clock" size={12} color={Colors.textGray}  />
-                        <Text style={styles.time}>Time : 24 hours</Text>
-                    </View>
-                    <View style={styles.botton}>
-                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
-                            <Image
-                                source={require('../assets/Booking.png')}
-                                style={styles.booking}
-                            />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonCONFIRM} onPress={() => router.push('Home')}>
-                            <Image
-                                source={require('../assets/chat.png')}
-                                style={styles.booking2}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                
-                
-                
-            </View>
-          </View>
-        ); 
-    };
 
   return (
     <ImageBackground
-      source={require('../assets/i8.png')} // Replace with the actual path to your background image
+      source={require('../assets/map.png')} // Replace with the actual path to your background image
       style={styles.backgroundImage}
     >
+    <LinearGradient
+      colors={['#FAE0E1', '#FAE0E1', '#FAE0E1', 'white', 'white']}
+      style={styles.gradientContainer}
+    >
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={styles.arrowButton} onPress={() => router.back('Home')}>
-          <Image
-            source={require('../assets/arrow.png')}
-            style={styles.arrow}
-          />
+        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.back('Home')}>
+        <Image
+          source={require('../assets/arrow.png')}
+          style={styles.arrow}
+        />
         </TouchableOpacity>
-
-        
-        <View style={styles.categoriesListWrapper}>
-            <FlatList
-                data={categoriesData}
-                renderItem={renderCategoryItem}
-                keyExtractor={(item) => item.id}
-                horizontal={true}
-            />
-        </View>
       </SafeAreaView>
+    </LinearGradient>
     </ImageBackground>
   );
 }
@@ -101,23 +34,27 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover', // or 'stretch' or 'contain'
-  },    
+  },  
+  gradientContainer: {
+    flex: 1,
+  },  
   container: {
     flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
     position: 'relative',
   },
-  arrowButton: {
-    backgroundColor: '',
-    width: 42,
-    height: 42,
-    marginLeft: 40,
-    marginTop: 73,
-  },
-  arrow: {
-    marginLeft: -20,
-    marginTop: -60,
-  },
   
+  arrow: {
+    marginLeft:-20,
+    marginTop:-60,
+  },
+  dog:{
+    width: 300,
+    height: 300,
+    marginTop:-170,
+    marginLeft:92,
+  },
   roundedBoxDog: {
     width: 420,
     height: 700,
@@ -130,97 +67,167 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  
-  categoriesListWrapper:{
-    marginTop:550,
-  },
-  categoryItemWrapper:{
-    width: 330,
-    height: 165,
-    backgroundColor: 'white',
-    marginRight:20,
-    borderRadius: 28,
-    flexDirection: 'row',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.5,
-
-  },
-  text:{
-    marginLeft:17,
-    marginTop:18,
+  Sleeptext:{
+    fontSize:55,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginTop:20,
+    marginLeft:40,
+    marginBottom:5,
     
+  },
 
-  },
-  categoryItemImage:{
-    width: 143,
-    height: 130,
-    marginLeft:14,
-    marginTop:14,
-  },
-  timewrapper:{
-    flexDirection: 'row',
-    marginBottom:7,
-    marginLeft:5,
-  },
-  
-  botton:{
-    flexDirection: 'row'
-  },
-  buttonLogin: {
-    width: 52,
-    height: 29,
-    backgroundColor: '#EDEDED',
-    borderRadius: 30,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.5,
-    marginRight:12,
-  },
-  buttonCONFIRM: {
-    width: 52,
-    height: 29,
-    backgroundColor: '#EDEDED',
-    borderRadius: 30,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.5,
-
-  },
-  
-  categoryItemTitle:{
+  Agetext:{
     fontSize :19,
     color:'#61485E',
     fontWeight: 'bold',
-    marginBottom:5,
+    marginBottom:7,
   },
-  location:{
-    fontSize :10,
-    color:'#C4C4C4',
+  Breedtext:{
+    fontSize :19,
+    color:'#61485E',
     fontWeight: 'bold',
-    marginBottom:5,
-    marginLeft:5,
-  },
-  time:{
-    fontSize :10,
-    color:'#C4C4C4',
-    fontWeight: 'bold',
-    marginTop:0,
-    marginLeft:5,
+    marginBottom:7,
     
   },
-  booking:{
-    width: 25, // Set the desired width
-    height: 25, // Set the desired height
-    marginLeft:13,
-    marginTop:3,
+  Ownertext:{
+    fontSize :19,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginBottom:7,
 
   },
-  booking2:{
-    width: 22, // Set the desired width
-    height: 22, // Set the desired height
-    marginLeft:15,
-    marginTop:3,
+  detail:{
+    
+    marginLeft:32,
+    marginTop:19,
 
   },
+
+  detailtext:{
+    fontSize:20,
+    color:'#A6A6A6',
+    fontWeight: 'bold',
+    marginTop:11,
+    marginLeft:51,
+  },
+  
+  detailbox:{
+    width: 322,
+    height: 121,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  doctorbox:{
+    width: 322,
+    height: 68,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  doctortext:{
+    fontSize :19,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginBottom:7,
+    marginTop:-3,
+
+  },
+  doctor:{
+    marginLeft:32,
+    marginTop:20,
+
+  },
+  date:{
+
+    
+    marginLeft:32,
+    marginTop:14,
+
+  },
+  datetext:{
+    fontSize :19,
+    color:'#61485E',
+    fontWeight: 'bold',
+    marginBottom:7,
+
+  },
+  datebox:{
+    width: 322,
+    height: 80,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    marginTop: 7,
+    marginLeft:51,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5,
+    borderWidth: 2, // Set the width of the border
+    borderColor: 'gray', // Set the color of the border
+  },
+  buttonLogin: {
+    width: 150,
+    height: 40,
+    marginTop: 30,
+    backgroundColor: '#E06047',
+    borderRadius: 30,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    marginLeft:53,
+    marginRight:12,
+
+  },
+  buttonCONFIRM: {
+    width: 150,
+    height: 40,
+    marginTop: 30,
+    backgroundColor: '#61485E',
+    borderRadius: 30,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    marginLeft:5,
+    marginRight:8,
+
+  },
+
+  LoginText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    marginLeft:48,
+    marginTop:8,
+  },
+  CONFIRMText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    marginLeft:28,
+    marginTop:8,
+  },
+  botton:{
+    marginTop:10,
+    flexDirection: 'row'
+  },
+
 });
