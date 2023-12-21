@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     flexDirection: 'row',
     marginTop: 75,
-    marginLeft: 100,
-    borderRadius:100,
+    marginLeft: 90,
+    borderRadius:140,
   },
 
 });
