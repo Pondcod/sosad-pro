@@ -155,7 +155,7 @@ export default function CoverPage() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => router.push("Chat2")}>
+          <TouchableOpacity onPress={() => router.push("Chat")}>
             <View
               style={{
                 width: 160,

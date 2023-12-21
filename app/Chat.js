@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-<<<<<<< HEAD
-import Feather from 'react-native-vector-icons/Feather'
 import { Link, router } from 'expo-router';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-=======
-import { Link, router } from 'expo-router';
->>>>>>> 3ccb1d3717d98a087d4c79abaa5e383072c0e554
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -25,16 +19,17 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
+        <Image source={require('../assets/owner.png')} style={styles.owner}></Image>
         <Text style={styles.header}>Chat</Text>
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={() => router.push('Chat2')}>
               <View style={styles.chat}>
-            <Image source={require('../assets/doctor.png')} style={styles.frame}></Image>
-                <View style={styles.textContainer}>
+                <Image source={require('../assets/doctor.png')} style={styles.frame}></Image>
+                  <View style={styles.textContainer}>
                     <Text style={styles.name}>Dr. Baifern</Text>
                     <Text style={styles.message}>How does your dog feel today?</Text>
-                </View>
-            </View>
+                  </View>
+              </View>
             </TouchableOpacity>
             <View style={styles.chat}>
             <Image source={require('../assets/doctor2.png')} style={styles.frame}></Image>
@@ -43,8 +38,6 @@ export default function LoginPage() {
                     <Text style={styles.message}>The next appointment will be in 1 week.</Text>
                 </View>
             </View>
-        </View>
-        <View style={styles.profile}>
         </View>
       </SafeAreaView>
     </LinearGradient>
@@ -59,22 +52,15 @@ const styles = StyleSheet.create({
     fontSize:35,
     fontWeight:'700',
     color:'#61485E',
-    marginTop: 60,
+    marginTop: 40,
     marginLeft:40,
     marginBottom: 30,
-  },
-  profile:{
-    width:200,
-    height:200,
-    borderRadius:50,
-    backgroundColor:'black',
   },
   chat:{
     width:'100%',
     height:100,
     flexDirection:'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
     margin: 10,
   },
   frame:{
@@ -83,6 +69,13 @@ const styles = StyleSheet.create({
     borderRadius:50,
     marginRight: 20,
     backgroundColor:'white',
+  },
+  owner:{
+    width:60,
+    height:60,
+    borderRadius:50,
+    backgroundColor:'white',
+    marginLeft:310,
   },
   textContainer:{
     marginTop: -25,
