@@ -63,12 +63,14 @@ export default function CoverPage() {
       {/* Add your sidebar content here */}
       <Image source={require('../assets/logoFurbaby.png')} 
           style={styles.logo}/>
-      <TouchableOpacity style={styles.Click} onPress={() => router.push('Signup')}>
-        <View></View>
-      </TouchableOpacity>
-      <TouchableOpacity style={{alignSelf:"center",marginTop:60,backgroundColor:"black", width:100,height:100}}>
-        <View></View>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonEdit} onPress={()=> router.push('Home')}>
+          
+          <Text style={styles.EditText}>Edit Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonLogout} onPress={()=> router.push('Cover')}>
+          
+          <Text style={styles.LogoutText}>Log out</Text>
+        </TouchableOpacity>
     </View>
   </LinearGradient>
 </Animated.View>
@@ -456,5 +458,57 @@ const styles = StyleSheet.create({
     height:103,
     marginLeft:220,
     marginTop:125,
+  },
+  EditText:{
+    width:175,
+    height:47,
+    fontSize: 35,
+    fontWeight:'bold',
+    color: '#61485E',
+    marginLeft:25,
+    marginTop:5,
+    position:'absolute',
+  },
+  buttonEdit:{
+    width:220,
+    height:56,
+    marginTop:50,
+    backgroundColor: 'white',
+    paddingVertical: 19,
+    paddingHorizontal: 59,
+    borderRadius: 30,
+    marginLeft:190,
+    shadowColor: 'grey',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
+    
+  },
+  LogoutText:{
+    width:175,
+    height:47,
+    fontSize: 35,
+    fontWeight:'bold',
+    color: '#61485E',
+    marginLeft:35,
+    marginTop:5,
+    position:'absolute',
+    
+  },
+  buttonLogout:{
+    width:181,
+    height:56,
+    marginTop:50,
+    backgroundColor: 'white',
+    paddingVertical: 19,
+    paddingHorizontal: 59,
+    borderRadius: 30,
+    marginLeft:210,
+    shadowColor: 'grey',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
   },
 });
