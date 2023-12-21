@@ -18,7 +18,6 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Image source={require('../assets/doctor.png')}></Image>
         <Text style={styles.header}>Chat</Text>
         <View style={styles.container}>
             <View style={styles.chat}>

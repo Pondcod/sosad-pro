@@ -18,10 +18,7 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-      
-      
-
-    
+        
       </SafeAreaView>
     </LinearGradient>
   );
