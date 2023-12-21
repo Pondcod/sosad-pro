@@ -14,7 +14,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
     const renderCategoryItem = ({ item }) => {
         return (
-            <View style={styles.catepgoryItemWrapper}>
+            <View style={styles.categoryItemWrapper}>
                 <Image source={item.image} style={styles.categoryItemImage}/>
                 <View style={styles.text}>
                     <View style={styles.searchIcon}>
@@ -47,7 +47,7 @@ export default function LoginPage() {
                         <Text style={styles.time}>Time : 24 hours</Text>
                     </View>
                     <View style={styles.botton}>
-                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Booking2')}>
+                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
                             <Image
                                 source={require('../assets/Booking.png')}
                                 style={styles.booking}
@@ -61,6 +61,9 @@ export default function LoginPage() {
                         </TouchableOpacity>
                     </View>
                 </View>
+                
+                
+                
             </View>
         ); 
     };
@@ -120,18 +123,6 @@ const styles = StyleSheet.create({
   arrow: {
     marginLeft: -20,
     marginTop: -60,
-  },
-  roundedBoxDog: {
-    width: 420,
-    height: 700,
-    borderRadius: 60,
-    backgroundColor: 'white',
-    marginTop: 0,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
-    shadowRadius: 4,
-    elevation: 5,
   },
   box: {
     width: 300,
