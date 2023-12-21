@@ -14,7 +14,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
     const renderCategoryItem = ({ item }) => {
         return (
-            <View style={styles.categoryItemWrapper}>
+            <View style={styles.catepgoryItemWrapper}>
                 <Image source={item.image} style={styles.categoryItemImage}/>
                 <View style={styles.text}>
                     <View style={styles.searchIcon}>
