@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import Feather from 'react-native-vector-icons/Feather'
+import { Link, router } from 'expo-router';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,17 +21,17 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Image source={require('../assets/owner.png')} style={styles.profile}></Image>
-
         <Text style={styles.header}>Chat</Text>
         <View style={styles.container}>
-            <View style={styles.chat}>
+            <TouchableOpacity>
+              <View style={styles.chat}>
             <Image source={require('../assets/doctor.png')} style={styles.frame}></Image>
                 <View style={styles.textContainer}>
                     <Text style={styles.name}>Dr. Baifern</Text>
                     <Text style={styles.message}>How does your dog feel today?</Text>
                 </View>
             </View>
+            </TouchableOpacity>
             <View style={styles.chat}>
             <Image source={require('../assets/doctor2.png')} style={styles.frame}></Image>
                 <View style={styles.textContainer}>
@@ -36,6 +39,8 @@ export default function LoginPage() {
                     <Text style={styles.message}>The next appointment will be in 1 week.</Text>
                 </View>
             </View>
+        </View>
+        <View style={styles.profile}>
         </View>
       </SafeAreaView>
     </LinearGradient>
@@ -57,7 +62,8 @@ const styles = StyleSheet.create({
   profile:{
     width:200,
     height:200,
-    marginTop:10,
+    borderRadius:50,
+    backgroundColor:'black',
   },
   chat:{
     width:'100%',
