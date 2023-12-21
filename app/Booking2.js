@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
   },
   roundedBoxDog: {
     width: 430,
-    height: 10000,
+    height: 1000,
     borderRadius: 60,
     backgroundColor: 'white',
     marginTop: 500,
@@ -373,7 +373,7 @@ imagecontain:{
   height:120,
   borderRadius:28,
   marginLeft: 26,
-  marginTop:30,
+  marginTop:35,
   backgroundColor:'gray',
 },
 });
