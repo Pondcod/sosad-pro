@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     marginLeft:90,
   },
   buttonLogin: {
-    width: 52,
+    width: 80,
     height: 29,
     backgroundColor: '#EDEDED',
     borderRadius: 30,
@@ -183,6 +183,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.5,
     marginRight:12,
+    marginLeft:-70,
+    marginTop:-3,
   },
   buttonCONFIRM: {
     width: 52,
@@ -219,7 +221,7 @@ const styles = StyleSheet.create({
   booking:{
     width: 25, // Set the desired width
     height: 25, // Set the desired height
-    marginLeft:13,
+    marginLeft:25,
     marginTop:3,
 
   },
