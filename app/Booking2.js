@@ -9,6 +9,10 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
 
   return (
+    <ImageBackground
+      source={require('../assets/map.png')} // Replace with the actual path to your background image
+      style={styles.backgroundImage}
+    >
     <LinearGradient
       colors={['#FAE0E1', '#FAE0E1', '#FAE0E1', 'white', 'white']}
       style={styles.gradientContainer}
@@ -20,56 +24,20 @@ export default function LoginPage() {
           style={styles.arrow}
         />
         </TouchableOpacity>
-        <Image
-         source={require('../assets/cat.png')}
-         style={styles.dog}
-        />
-    
-    <View style={styles.roundedBoxDog}>
-        <Text style={styles.Sleeptext}>Babe</Text>
-        <Text style={styles.detailtext}>Detail</Text> 
-        <View style={styles.detailbox}>
-            <View style={styles.detail}>     
-                <Text style={styles.Agetext}>Age : 0.5 year old</Text>
-                <Text style={styles.Breedtext}>Breed : Tabby Cat</Text>
-                <Text style={styles.Ownertext}>Owner : pprimrs</Text>
-            </View>
-        </View>
-        <Text style={styles.detailtext}>Doctor diagnoses</Text>
-        <View style={styles.datebox}>
-            <View style={styles.doctor}>     
-                <Text style={styles.doctortext}>Eating less food and water, oversleep.</Text>
-                
-            </View>
-        </View>
-        <Text style={styles.detailtext}>On Date</Text>
-        <View style={styles.datebox}>
-            <View style={styles.date}>     
-                <Text style={styles.datetext}>18 November 2023 </Text>
-                <Text style={styles.datetext}>Time : 18:00 pm</Text>
-                
-            </View>
-        </View>
-        <View style={styles.botton}>
-            <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
-                <Text style={styles.LoginText}>DENY</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonCONFIRM} onPress={() => router.push('Home')}>
-                <Text style={styles.CONFIRMText}>CONFIRM</Text>
-            </TouchableOpacity>
-        </View>
-        
-    </View>
-    
       </SafeAreaView>
     </LinearGradient>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch' or 'contain'
+  },  
   gradientContainer: {
     flex: 1,
-  },
+  },  
   container: {
     flex: 1,
     // justifyContent: 'center',

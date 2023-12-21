@@ -128,18 +128,10 @@ export default function CoverPage() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => router.push("Booking")}>
-            <View
-              style={{
-                width: 160,
-                height: 160,
-                marginLeft: 30,
-                marginBottom: -1,
-              }}
-            >
-              <View style={styles.roundedBox4}></View>
-              <Image
-                source={require("../assets/Booking.png")}
+        <TouchableOpacity onPress={() => router.push('Booking')}>
+        <View style={{width:160, height:160, marginLeft:30, marginBottom:-1,}} >
+        <View style={styles.roundedBox4}></View>
+        <Image  source={require('../assets/Booking.png')}
                 style={styles.booking}
               />
               <Text style={styles.Bookingtext}>Booking</Text>
