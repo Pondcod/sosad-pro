@@ -158,8 +158,6 @@ const styles = StyleSheet.create({
   text:{
     marginLeft:17,
     marginTop:18,
-    
-
   },
   categoryItemImage:{
     width: 143,
@@ -172,7 +170,6 @@ const styles = StyleSheet.create({
     marginBottom:7,
     marginLeft:5,
   },
-  
   botton:{
     flexDirection: 'row',
     marginLeft:90,

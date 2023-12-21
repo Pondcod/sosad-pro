@@ -21,17 +21,18 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Image source={require('../assets/owner.png')} style={styles.profile}></Image>
-
+        <Image source={require('../assets/owner.png')} style={styles.owner}></Image>
         <Text style={styles.header}>Chat</Text>
         <View style={styles.container}>
-            <View style={styles.chat}>
-            <Image source={require('../assets/doctor.png')} style={styles.frame}></Image>
-                <View style={styles.textContainer}>
+            <TouchableOpacity  onPress={() => router.push('Chat2')}>
+              <View style={styles.chat}>
+                <Image source={require('../assets/doctor.png')} style={styles.frame}></Image>
+                  <View style={styles.textContainer}>
                     <Text style={styles.name}>Dr. Baifern</Text>
                     <Text style={styles.message}>How does your dog feel today?</Text>
-                </View>
-            </View>
+                  </View>
+              </View>
+            </TouchableOpacity>
             <View style={styles.chat}>
             <Image source={require('../assets/doctor2.png')} style={styles.frame}></Image>
                 <View style={styles.textContainer}>
@@ -53,21 +54,15 @@ const styles = StyleSheet.create({
     fontSize:35,
     fontWeight:'700',
     color:'#61485E',
-    marginTop: 60,
+    marginTop: 40,
     marginLeft:40,
     marginBottom: 30,
-  },
-  profile:{
-    width:200,
-    height:200,
-    marginTop:10,
   },
   chat:{
     width:'100%',
     height:100,
     flexDirection:'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
     margin: 10,
   },
   frame:{
@@ -76,6 +71,13 @@ const styles = StyleSheet.create({
     borderRadius:50,
     marginRight: 20,
     backgroundColor:'white',
+  },
+  owner:{
+    width:60,
+    height:60,
+    borderRadius:50,
+    backgroundColor:'white',
+    marginLeft:310,
   },
   textContainer:{
     marginTop: -25,

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
 import Feather from 'react-native-vector-icons/Feather'
 import { Link, router } from 'expo-router';
+
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function LoginPage() {
@@ -25,6 +27,7 @@ export default function LoginPage() {
         <Text style={styles.header}>Profile</Text>
         <TouchableOpacity style={{}} onPress={() => router.push('Profileowner')}>
         <View style={styles.box}>
+
             <View style={styles.ImageContainer}>
 
             <Text style={styles.datetext}>Edit your Profile</Text>
@@ -35,6 +38,8 @@ export default function LoginPage() {
                 style={styles.R1}
             />
             </View>
+
+                
         </View>
         </TouchableOpacity>
         
