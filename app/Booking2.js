@@ -14,7 +14,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
     const renderCategoryItem = ({ item }) => {
         return (
-            <View style={styles.catepgoryItemWrapper}>
+          <View style={styles.roundedBoxDog}>
+            <View style={styles.categoryItemWrapper}>
                 <Image source={item.image} style={styles.categoryItemImage}/>
                 <View style={styles.text}>
                     <View style={styles.searchIcon}>
@@ -47,7 +48,7 @@ export default function LoginPage() {
                         <Text style={styles.time}>Time : 24 hours</Text>
                     </View>
                     <View style={styles.botton}>
-                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Booking2')}>
+                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
                             <Image
                                 source={require('../assets/Booking.png')}
                                 style={styles.booking}
@@ -65,12 +66,13 @@ export default function LoginPage() {
                 
                 
             </View>
+          </View>
         ); 
     };
 
   return (
     <ImageBackground
-      source={require('../assets/map.png')} // Replace with the actual path to your background image
+      source={require('../assets/i8.png')} // Replace with the actual path to your background image
       style={styles.backgroundImage}
     >
       <SafeAreaView style={styles.container}>
@@ -81,16 +83,7 @@ export default function LoginPage() {
           />
         </TouchableOpacity>
 
-        <View style={styles.box}>
-          <Feather name="search" size={20} color={Colors.textGray} style={styles.searchIcon} />
-          <TextInput
-            style={styles.emailInput}
-            placeholder="Search your hospital"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            placeholderTextColor={Colors.placeholderTextColor}
-          />
-        </View>
+        
         <View style={styles.categoriesListWrapper}>
             <FlatList
                 data={categoriesData}
@@ -124,6 +117,7 @@ const styles = StyleSheet.create({
     marginLeft: -20,
     marginTop: -60,
   },
+  
   roundedBoxDog: {
     width: 420,
     height: 700,
@@ -136,32 +130,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  box: {
-    width: 300,
-    height: 55,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 40,
-    borderWidth: 1,
-    borderColor: '#E5E5E5',
-    marginTop: -60,
-    marginLeft: 70,
-  },
-  searchIcon: {
-    marginLeft:15,
-    flexDirection: 'row',
-    marginBottom:5,
-    marginTop:3,
-  },
-  emailInput: {
-    flex: 1,
-    height: 40,
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'gray',
-    marginLeft: 10,
-  },
+  
   categoriesListWrapper:{
     marginTop:550,
   },
