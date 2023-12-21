@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Link, router } from 'expo-router';
 import Feather from 'react-native-vector-icons/Feather'
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+// finisf
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
