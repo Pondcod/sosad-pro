@@ -19,7 +19,6 @@ export default function _layout() {
         <Stack.Screen name='Dogdata' options={{headerShown:false}}/>
         <Stack.Screen name='Emergency' options={{headerShown:false}}/>
         <Stack.Screen name='Emergency2' options={{headerShown:false}}/>
-        <Stack.Screen name='Chat' options={{headerShown:false}}/>
     </Stack>
   )
 }
