@@ -21,8 +21,13 @@ export default function _layout() {
         <Stack.Screen name='Emergency2' options={{headerShown:false}}/>
         <Stack.Screen name='Chat' options={{headerShown:false}}/>
         <Stack.Screen name='Booking' options={{headerShown:false}}/>
+        <Stack.Screen name='Booking2' options={{headerShown:false}}/>
         <Stack.Screen name='Chat2' options={{headerShown:false}}/>
         <Stack.Screen name='Profile' options={{headerShown:false}}/>
+        <Stack.Screen name='Profileowner' options={{headerShown:false}}/>
+        <Stack.Screen name='Profileowner2' options={{headerShown:false}}/>
+        <Stack.Screen name='Profilepet' options={{headerShown:false}}/>
+        <Stack.Screen name='Profilepet2' options={{headerShown:false}}/>
     </Stack>
   )
 }

@@ -22,9 +22,19 @@ export default function SignupPage() {
           />
         </TouchableOpacity>
         <Text style={styles.signuptext}>SIGN UP</Text>
+        <Text style={styles.Username}>Username</Text>
         <Text style={styles.email}>Email</Text>
         <Text style={styles.password}>Password</Text>
         <Text style={styles.number}>Number</Text>
+
+        <View style={styles.usernameContainer}>
+          <TextInput
+            style={styles.emailInput}
+            placeholder=""
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          />
+        </View>
         <View style={styles.emailContainer}>
           <TextInput
             style={styles.emailInput}
@@ -39,6 +49,14 @@ export default function SignupPage() {
             placeholder=""
             value={password}
             onChangeText={(text) => setPassword(text)}
+          />
+        </View>
+        <View style={styles.numberContainer}>
+          <TextInput
+            style={styles.numberInput}
+            placeholder=""
+            value={number}
+            onChangeText={(text) => setNumber(text)}
           />
         </View>
         <View style={styles.numberContainer}>
@@ -72,23 +90,29 @@ const styles = StyleSheet.create({
     fontSize: 48,
     color: '#61485E',
     fontWeight: 'bold',
-    position: 'absolute',
-    top: 220,
+    top: -40,
     left: 60,
   },
   arrow: {
     width: 42,
     height: 42,
-    position: 'absolute',
+    marginTop:-50,
+  },
+  Username: {
+    width: 231,
+    height: 53,
+    color: '#A6A6A6',
+    fontSize: 24,
+    left: 64,
+    top: -50,
   },
   email: {
     width: 231,
     height: 53,
     color: '#A6A6A6',
     fontSize: 24,
-    position: 'absolute',
     left: 64,
-    top: 320,
+    top: 10,
   },
   password: {
     width: 261,
@@ -107,6 +131,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 64,
     top: 605,
+  },
+  usernameContainer: {
+    alignItems: 'center',
+    top:-120,
+    left: 0,
+    shadowColor: 'grey',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
   },
   emailContainer: {
     alignItems: 'center',

@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Link, router } from 'expo-router';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+    const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedTime, setSelectedTime] = useState(null);
+  
+    const handleDayPress = (day) => {
+      setSelectedDay(day);
+    };
+  
+    const handleTimePress = (time) => {
+      setSelectedTime(time);
+    };
+  
   return (
     <LinearGradient
       colors={['rgba(250, 224, 225, 1)', 'rgba(250, 224, 225, 0)']}
@@ -30,70 +39,65 @@ export default function LoginPage() {
                 <Text style={styles.rating}>★ 4.7</Text>
         </View>
         <View style={styles.dateWrapper}>
-
-        <View style={styles.boxesContainer}>
-            <View style={styles.box}>
-                <Text style={styles.datetext}></Text>
-            </View>
-            <View style={styles.box}>
-                <Text style={styles.datetext}></Text>
-            </View>
-            <View style={styles.box}>
-                <Text style={styles.datetext}></Text>
-            </View>
-            <View style={styles.box}>
-                <Text style={styles.datetext}></Text>
-            </View>
-        </View>
+          <View style={styles.boxesContainer}>
+            {['Fri', 'Sat', 'Sun', 'Mon'].map((day, index) => (
+              <TouchableOpacity
+                key={index}
+                style={[styles.box, selectedDay === day && { backgroundColor: '#D42866' }]}
+                onPress={() => handleDayPress(day)}
+              >
+                <Text style={[styles.daytext, selectedDay === day && { color: 'white' }]}>{day}</Text>
+                <Text style={[styles.datetext, selectedDay === day && { color: 'white' }]}>22</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
 
         <View style={styles.details}>
-                <Text style={styles.Time}>Select Time</Text>
-                
+          <Text style={styles.Time}>Select Time</Text>
         </View>
 
-    
         <View style={styles.boxesContainer2}>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>09:00 AM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>10:00 AM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>11:00 AM</Text>
-            </View>
-        </View>
-        <View style={styles.boxesContainer2}>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>01:00 PM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>02:00 PM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>03:00 PM</Text>
-            </View>
-        </View>
-        <View style={styles.boxesContainer2}>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>04:00 PM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>05:00 PM</Text>
-            </View>
-            <View style={styles.boxtime}>
-                <Text style={styles.timetext}>06:00 PM</Text>
-            </View>
+  {['09:00 AM', '10:00 AM', '11:00 AM'].map((time, index) => (
+    <TouchableOpacity
+      key={index}
+      style={[styles.boxtime, selectedTime === time && { backgroundColor: '#D42866' }]}
+      onPress={() => handleTimePress(time)}
+    >
+      <Text style={[styles.timetext, selectedTime === time && { color: 'white' }]}>{time}</Text>
+    </TouchableOpacity>
+  ))}
+</View>
 
-        </View>
+<View style={styles.boxesContainer2}>
+  {['01:00 PM', '02:00 PM', '03:00 PM'].map((time, index) => (
+    <TouchableOpacity
+      key={index}
+      style={[styles.boxtime, selectedTime === time && { backgroundColor: '#D42866' }]}
+      onPress={() => handleTimePress(time)}
+    >
+      <Text style={[styles.timetext, selectedTime === time && { color: 'white' }]}>{time}</Text>
+    </TouchableOpacity>
+  ))}
+</View>
 
-        <View style={styles.booked}>
-            <Text style={styles.textbook}>Booked</Text>
-        </View>
-      
+<View style={styles.boxesContainer2}>
+  {['04:00 PM', '05:00 PM', '06:00 PM'].map((time, index) => (
+    <TouchableOpacity
+      key={index}
+      style={[styles.boxtime, selectedTime === time && { backgroundColor: '#D42866' }]}
+      onPress={() => handleTimePress(time)}
+    >
+      <Text style={[styles.timetext, selectedTime === time && { color: 'white' }]}>{time}</Text>
+    </TouchableOpacity>
+  ))}
+</View>
 
-    
+<View style={styles.booked}>
+<TouchableOpacity style={{width:180,height:60,}} onPress={() => router.back('Home')}>
+    <Text style={styles.textbook}>Booked</Text>
+  </TouchableOpacity>
+</View>
       </SafeAreaView>
     </LinearGradient>
   );
@@ -163,6 +167,8 @@ const styles = StyleSheet.create({
     height:70,
     backgroundColor:'white',
     borderRadius:20,
+    justifyContent:'center',
+    alignItems:'center',
   },
   
   boxesContainer2:{
@@ -207,6 +213,14 @@ const styles = StyleSheet.create({
     color:'#ffffff',
     marginTop:10,
     marginLeft:35,
-  }
-
+  },
+  daytext:{
+    fontSize:15,
+    fontWeight:'400',
+    color:'grey',
+  },
+  datetext:{
+    fontSize:20,
+    fontWeight:'600',
+  },
 });

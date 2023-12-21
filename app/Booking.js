@@ -8,7 +8,6 @@ import categoriesData from './categoriesData';
 import { FlatList } from 'react-native';
 
 
-    
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,23 +46,14 @@ export default function LoginPage() {
                         <Text style={styles.time}>Time : 24 hours</Text>
                     </View>
                     <View style={styles.botton}>
-                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Home')}>
+                        <TouchableOpacity style={styles.buttonLogin} onPress={() => router.push('Booking2')}>
                             <Image
                                 source={require('../assets/Booking.png')}
                                 style={styles.booking}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonCONFIRM} onPress={() => router.push('Home')}>
-                            <Image
-                                source={require('../assets/chat.png')}
-                                style={styles.booking2}
-                            />
-                        </TouchableOpacity>
                     </View>
                 </View>
-                
-                
-                
             </View>
         ); 
     };
@@ -181,7 +171,8 @@ const styles = StyleSheet.create({
     marginLeft:5,
   },
   botton:{
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginLeft:90,
   },
   buttonLogin: {
     width: 52,

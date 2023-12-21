@@ -1,35 +1,31 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput, ImageBackground } from 'react-native';
 import { Image } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather'
 import { Link, router } from 'expo-router';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
   return (
     <ImageBackground
-      source={require('../assets/map.png')} // Replace with the actual path to your background image
+      source={require('../assets/i8.png')} // Replace with the actual path to your background image
       style={styles.backgroundImage}
     >
-    <LinearGradient
-      colors={['#FAE0E1', '#FAE0E1', '#FAE0E1', 'white', 'white']}
-      style={styles.gradientContainer}
-    >
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity  style={{backgroundColor: '', width: 42,height:42, marginLeft:40,marginTop:73}}onPress={() => router.back('Home')}>
-        <Image
-          source={require('../assets/arrow.png')}
-          style={styles.arrow}
-        />
+        <TouchableOpacity style={{ backgroundColor: '', width: 42, height: 42, marginLeft: 40, marginTop: 60, marginBottom: -40 }} onPress={() => router.back('Home')}>
+          <Image
+            source={require('../assets/arrow.png')}
+            style={styles.arrow}
+          />
         </TouchableOpacity>
+        
       </SafeAreaView>
-    </LinearGradient>
     </ImageBackground>
   );
 }
-
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
