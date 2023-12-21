@@ -18,7 +18,8 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Image source={require('../assets/doctor.png')}></Image>
+        <Image source={require('../assets/owner.png')} style={styles.profile}></Image>
+
         <Text style={styles.header}>Chat</Text>
         <View style={styles.container}>
             <View style={styles.chat}>
@@ -52,6 +53,11 @@ const styles = StyleSheet.create({
     marginTop: 60,
     marginLeft:40,
     marginBottom: 30,
+  },
+  profile:{
+    width:200,
+    height:200,
+    marginTop:10,
   },
   chat:{
     width:'100%',

@@ -63,7 +63,7 @@ export default function CoverPage() {
       {/* Add your sidebar content here */}
       <Image source={require('../assets/logoFurbaby.png')} 
           style={styles.logo}/>
-        <TouchableOpacity style={styles.buttonEdit} onPress={()=> router.push('Home')}>
+        <TouchableOpacity style={styles.buttonEdit} onPress={()=> router.push('Profile')}>
           
           <Text style={styles.EditText}>Edit Profile</Text>
         </TouchableOpacity>

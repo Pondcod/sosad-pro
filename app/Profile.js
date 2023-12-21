@@ -18,7 +18,14 @@ export default function LoginPage() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        
+        <Text style={styles.header}>Create Your</Text>
+        <Text style={styles.header}>Profile</Text>
+        <View style={styles.box}>
+                <Text style={styles.datetext}></Text>
+        </View>
+        <View style={styles.box}>
+                <Text style={styles.datetext}></Text>
+        </View>
       </SafeAreaView>
     </LinearGradient>
   );
@@ -28,4 +35,22 @@ const styles = StyleSheet.create({
   gradientContainer: {
     flex: 1,
   },
+  header:{
+    fontSize:37,
+    fontWeight:'700',
+    color:'#61485E',
+    marginTop: 60,
+    marginLeft:40,
+    marginBottom: -45,
+  },
+  box:{
+    width:250,
+    height:250,
+    backgroundColor:'white',
+    flexDirection: 'row',
+    marginTop: 75,
+    marginLeft: 100,
+    borderRadius:100,
+  },
+
 });
