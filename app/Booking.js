@@ -61,9 +61,6 @@ export default function LoginPage() {
                         </TouchableOpacity>
                     </View>
                 </View>
-                
-                
-                
             </View>
         ); 
     };
