@@ -117,7 +117,7 @@ export default function CoverPage() {
               style={{
                 width: 160,
                 height: 160,
-                marginLeft: 30,
+                marginLeft: 25,
                 marginBottom: 160,
               }}
             >
@@ -131,7 +131,7 @@ export default function CoverPage() {
           </TouchableOpacity>
 
         <TouchableOpacity onPress={() => router.push('Booking')}>
-        <View style={{width:160, height:160, marginLeft:30, marginBottom:-1,}} >
+        <View style={{width:160, height:160, marginLeft:25, marginBottom:-1,}} >
         <View style={styles.roundedBox4}></View>
         <Image  source={require('../assets/Booking.png')}
                 style={styles.booking}
@@ -145,7 +145,7 @@ export default function CoverPage() {
               style={{
                 width: 160,
                 height: 160,
-                marginLeft: 30,
+                marginLeft: 25,
                 marginBottom: -1,
               }}
             >
@@ -160,7 +160,7 @@ export default function CoverPage() {
               style={{
                 width: 160,
                 height: 160,
-                marginLeft: 30,
+                marginLeft: 25,
                 marginBottom: -1,
               }}
             >
